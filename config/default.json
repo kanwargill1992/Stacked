@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://kanwar123:kanwar123@cluster0.t2qze.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "thisIsMySecretToken"
+  "jwtSecret": "thisIsMySecretToken",
+  "githubClientId": "73793d530ff1e93123e0",
+  "githubClientSecret": "f3445f2efb2fbe272235b55288516a05580c3e54"
 }
