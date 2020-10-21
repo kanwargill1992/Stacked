@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -19,8 +20,6 @@ const Login = () => {
 
   return (
     <section className="container">
-      {/* <div className="alert alert-danger">Invalid Credentials</div> */}
-
       <h1 className="large text-primary">Sign In</h1>
       <p className="lead">
         <i className="fas fa-user"> </i>Sign into your account
@@ -56,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default connect()(Login);
