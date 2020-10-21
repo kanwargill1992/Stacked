@@ -1,7 +1,3 @@
-import React from "react";
+import { combineReducers } from "redux";
 
-const index = () => {
-  return <div></div>;
-};
-
-export default index;
+export default combineReducers({ alert });

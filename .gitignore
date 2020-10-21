@@ -1,3 +1,5 @@
 node_modules/
 default.json/
 .env
+yarn.lock
+yarn-error.log
