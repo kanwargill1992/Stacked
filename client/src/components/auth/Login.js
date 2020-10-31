@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { login } from "../../actions/auth";
 
-const Login = ({ login }) => {
+const Login = ({ login, isAuthenticated }) => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -20,6 +20,11 @@ const Login = ({ login }) => {
     e.preventDefault();
     login(email, password);
   };
+
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard"></Redirect>;
+  }
 
   return (
     <section className="container">
@@ -60,6 +65,7 @@ const Login = ({ login }) => {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
