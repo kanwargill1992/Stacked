@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { check, validationResult } = require("express-validator");
+const { body, validationResult } = require("express-validator");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -8,13 +8,15 @@ const config = require("config");
 
 const User = require("../../models/User");
 
-//Register User
+// @route POST api/users
+//@desc   Register User
+//@acess  Public
 router.post(
   "/",
   [
-    check("name", "Name is Required").not().isEmpty(),
-    check("email", "Please include a valid email").isEmail(),
-    check(
+    body("name", "Name is Required").not().isEmpty(),
+    body("email", "Please include a valid email").isEmail(),
+    body(
       "password",
       "Please enter a password with 6 or more characters"
     ).isLength({ min: 6 }),

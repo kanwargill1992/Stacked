@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
-const { check, validationResult } = require("express-validator");
+const { body, validationResult } = require("express-validator");
 const request = require("request");
 const config = require("config");
 
@@ -37,8 +37,8 @@ router.post(
   [
     auth,
     [
-      check("status", "Status is required").not().isEmpty(),
-      check("skills", "Skills is required").not().isEmpty(),
+      body("status", "Status is required").not().isEmpty(),
+      body("skills", "Skills is required").not().isEmpty(),
     ],
   ],
   async (req, res) => {
@@ -171,9 +171,9 @@ router.put(
   [
     auth,
     [
-      check("title", "Title is required").not().isEmpty(),
-      check("company", "Company is required").not().isEmpty(),
-      check("from", "From date is required").not().isEmpty(),
+      body("title", "Title is required").not().isEmpty(),
+      body("company", "Company is required").not().isEmpty(),
+      body("from", "From date is required").not().isEmpty(),
     ],
   ],
   async (req, res) => {
@@ -251,10 +251,10 @@ router.put(
   [
     auth,
     [
-      check("school", "School is required").not().isEmpty(),
-      check("degree", "Degree is required").not().isEmpty(),
-      check("fieldofstudy", "Field of study is required").not().isEmpty(),
-      check("from", "From date is required").not().isEmpty(),
+      body("school", "School is required").not().isEmpty(),
+      body("degree", "Degree is required").not().isEmpty(),
+      body("fieldofstudy", "Field of study is required").not().isEmpty(),
+      body("from", "From date is required").not().isEmpty(),
     ],
   ],
   async (req, res) => {

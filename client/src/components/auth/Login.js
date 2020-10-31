@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Login = () => {
+import { login } from "../../actions/auth";
+
+const Login = ({ login }) => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -15,7 +18,7 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("Success");
+    login(email, password);
   };
 
   return (
@@ -55,4 +58,12 @@ const Login = () => {
   );
 };
 
-export default connect()(Login);
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Login);
