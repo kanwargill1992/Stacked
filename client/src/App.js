@@ -7,6 +7,7 @@ import { loadUser } from "./actions/auth";
 
 import Landing from "./components/layout/Landing";
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Alert from "./components/layout/Alert";
@@ -48,6 +49,7 @@ const App = () => {
               />
             </Switch>
           </section>
+          <Footer />
         </Fragment>
       </Router>
     </Provider>
