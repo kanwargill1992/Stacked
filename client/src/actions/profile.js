@@ -209,7 +209,7 @@ export const getProfiles = () => async (dispatch) => {
   });
   try {
     const res = await axios.get("/api/profile");
-
+    console.log("profiles", res);
     dispatch({
       type: GET_PROFILES,
       payload: res.data,
