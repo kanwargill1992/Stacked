@@ -7,9 +7,10 @@ import { getProfiles } from "../../actions/profile";
 import ProfileItem from "./ProfileItem";
 
 const Profiles = ({ getProfiles, profile: { loading, profiles } }) => {
+  //get all the profiles
   useEffect(() => {
     getProfiles();
-  }, []);
+  }, [getProfiles]);
 
   return (
     <Fragment>
@@ -17,15 +18,17 @@ const Profiles = ({ getProfiles, profile: { loading, profiles } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className="large text-primary">Universe</h1>
+          <h1 className="large text-primary">Stacked People</h1>
           <p className="lead ">
             <i className="fab fa-connectdevelop"></i>Connect with creators
           </p>
           <div className="profiles">
             {profiles.length > 0 ? (
-              profiles.map((profile) => (
-                <ProfileItem key={profile._id} profile={profile} />
-              ))
+              profiles.map(
+                (item) => <ProfileItem key={item._id} profile={item} />
+                // (item) => console.log(item)
+                // console.log(item._id)
+              )
             ) : (
               <h4>No profiles found.....</h4>
             )}

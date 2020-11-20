@@ -204,12 +204,14 @@ export const deleteAccount = (id) => async (dispatch) => {
 
 //get all profiles
 export const getProfiles = () => async (dispatch) => {
-  // dispatch({
-  //   type: CLEAR_PROFILE,
-  // });
+  // clear profile history
+  dispatch({
+    type: CLEAR_PROFILE,
+  });
+
   try {
     const res = await axios.get("/api/profile");
-
+    // console.log("response on profiles", res);
     dispatch({
       type: GET_PROFILES,
       payload: res.data,
