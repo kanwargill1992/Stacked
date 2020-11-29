@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const ProfileTop = ({
@@ -20,21 +21,21 @@ const ProfileTop = ({
       </p>
       <p>{location}</p>
       <div className="icons my-1">
-        <a href="#">
+        <Link to="/">
           <i className="fas fa-globe fa-2x"></i>
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="/">
           <i className="fab fa-twitter fa-2x"></i>
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="/">
           <i className="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="/">
           <i className="fab fa-instagram fa-2x"></i>
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="/">
           <i className="fab fa-facebook fa-2x"></i>
-        </a>
+        </Link>
       </div>
     </div>
   );
