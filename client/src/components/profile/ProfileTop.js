@@ -17,13 +17,16 @@ const ProfileTop = ({
       <img className="round-img my-1" src={avatar} alt="" />
       <h1 className="large">{name}</h1>
       <p className="lead">
-        {status} At {company}
+        {status} At {company && <span>at {company}</span>}
       </p>
-      <p>{location}</p>
+      <p>{location && <span>{location}</span>}</p>
+
       <div className="icons my-1">
-        <Link to="/">
-          <i className="fas fa-globe fa-2x"></i>
-        </Link>
+        {website && (
+          <a href={website}>
+            <i className="fas fa-globe fa-2x"></i>
+          </a>
+        )}
         <Link href="/">
           <i className="fab fa-twitter fa-2x"></i>
         </Link>
