@@ -8,6 +8,7 @@ import {
   CLEAR_PROFILE,
   GET_PROFILES,
   GET_REPOS,
+  NO_REPOS,
 } from "./types";
 
 //Get current User Profile
@@ -253,20 +254,19 @@ export const getProfileById = (userId) => async (dispatch) => {
 export const getGithubRepos = (username) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
-
+    console.log("repos", res);
     dispatch({
       type: GET_REPOS,
       payload: res.data,
     });
   } catch (err) {
-    const errors = err.res.data.errors;
-    if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
-    }
-
     dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      type: NO_REPOS,
     });
+
+    // dispatch({
+    //   type: PROFILE_ERROR,
+    //   payload: { msg: err.response.statusText, status: err.response.status },
+    // });
   }
 };
