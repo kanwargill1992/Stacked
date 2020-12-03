@@ -19,7 +19,7 @@ import AddExperience from "./components/profile-form/AddExperience";
 import AddEducation from "./components/profile-form/AddEducation";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
-
+import Posts from "./components/posts/Posts";
 import setAuthToken from "./utils/setAuthToken";
 
 import "./App.css";
@@ -70,6 +70,7 @@ const App = () => {
                 path="/add-Education"
                 component={AddEducation}
               />
+              <PrivateRoute exact path="/posts" components={Posts} />
             </Switch>
           </section>
           <Footer />
