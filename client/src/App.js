@@ -70,7 +70,7 @@ const App = () => {
                 path="/add-Education"
                 component={AddEducation}
               />
-              <PrivateRoute exact path="/posts" components={Posts} />
+              <PrivateRoute exact path="/posts" component={Posts} />
             </Switch>
           </section>
           <Footer />
