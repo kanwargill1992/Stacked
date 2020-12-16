@@ -49,7 +49,7 @@ const PostItem = ({
         <button
           type="button"
           className="btn btn-danger"
-          onclick={(e) => deletePost(_id)}
+          onClick={(e) => deletePost(_id)}
         >
           <i className="fas fa-times" />
         </button>
