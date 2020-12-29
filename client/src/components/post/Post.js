@@ -25,7 +25,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
       <CommentForm postId={post._id} />
       <div className="comments ">
         {post.comments.map((comment) => (
-          <CommentItem key={comment._id} commnent={comment} postId={post._id} />
+          <CommentItem key={comment._id} comment={comment} postId={post._id} />
         ))}
       </div>
     </Fragment>
@@ -33,7 +33,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
 };
 
 Post.propTypes = {
-  getpost: PropTypes.func.isRequired,
+  getPost: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
 };
 
