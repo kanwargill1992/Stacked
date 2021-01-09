@@ -8,6 +8,10 @@ Stacked a social media platform for the developers for sharing ideas and interac
 
 It has profile page to share your profile and tell your story.
 <img src="./client/src/img/profile.png" />
+
+###
+
+Create and edit your home page
 <img src="./client/src/img/edit.png"/>
 
 ### Other Developers
@@ -18,3 +22,9 @@ You can view other developer profiles
 ### Create Posts and can initiate discussion on the posts
 
 <img src="./client/src/img/Posts.png" />
+
+### Things I am Working on right now
+
+-Follow each other
+-Personal Message
+-Upload Picture
